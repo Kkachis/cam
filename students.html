@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>재학생 소개 | 까치대학교</title>
+  <meta name="description" content="까치대학교 재학생(캐릭터) 소개. 명함형 카드 클릭 시 확장 인터랙션과 이미지 갤러리 제공." />
+  <link rel="stylesheet" href="./css/common.css" />
+  <script defer src="./js/common.js"></script>
+  <script defer src="./js/students.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" aria-label="까치대학교 홈">
+        <span class="brand-mark" aria-hidden="true">KU</span>
+        <span class="brand-text">
+          <strong>까치대학교</strong>
+          <small>Kkachi University</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <a class="nav-link" href="./about.html">학교 소개</a>
+        <a class="nav-link is-active" href="./students.html" aria-current="page">재학생 소개</a>
+        <a class="nav-link" href="./buildings.html">캠퍼스 건물들 소개</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost" type="button" data-action="toggle-theme" aria-label="테마 전환">
+          <span class="icon" aria-hidden="true">☾</span>
+          <span class="btn-text">Theme</span>
+        </button>
+        <button class="btn btn-primary" type="button" data-action="scroll-top">맨 위로</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div>
+          <p class="badge">Students / Characters</p>
+          <h1 class="page-title">재학생 소개</h1>
+          <p class="page-sub">
+            까치대학교의 개성 넘치는 재학생(캐릭터)들을 만나보세요.
+            명함형 카드 클릭 시 확장 인터랙션과 이미지 갤러리를 제공합니다.
+          </p>
+        </div>
+        <div class="page-hero-card" aria-hidden="true">
+          <div class="mini-kpi"><strong>1.7만 명의 지성</strong><span>15,000명의 재학생과 2,000명의 연구진</span></div>
+          <div class="mini-kpi"><strong>TOP 5 명문</strong><span>의대와 국책연구관을 보유한 연구 중심 대학</span></div>
+          <div class="mini-kpi"><strong>No.1 산학협력</strong><span>전국 최고 수준의 창업 지원 및 취업률 달성</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- ... (상단 동일) -->
+
+<div class="toolbar">
+  <div class="search">
+    <label class="sr-only" for="studentSearch">학생 검색</label>
+    <input id="studentSearch" type="search" placeholder="이름 / 학과 / 키워드 검색" autocomplete="off" />
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn btn-ghost" type="button" data-action="open-all">전체 열기</button>
+    <button class="btn btn-ghost" type="button" data-action="collapse-all">전체 접기</button>
+    <button class="btn btn-ghost" type="button" data-action="random-open">랜덤 열기</button>
+  </div>
+</div>
+
+<!-- ... (이하 동일) -->
+
+
+        <div id="studentGrid" class="card-grid" aria-live="polite"></div>
+
+        <p class="muted small">
+          연출된 사진으로 실제와 다를 수 있음.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>까치대학교</strong>
+        <p class="muted">서울특별시 크랙구 까치로 26 (깎치동)</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">홈</a>
+        <a href="./about.html">학교 소개</a>
+        <a href="./buildings.html">캠퍼스 건물</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
