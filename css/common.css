@@ -962,3 +962,43 @@ code{
   outline: none;
   box-shadow: 0 0 0 3px rgba(125,211,252,0.35);
 }
+.glass-media:focus-visible img{
+  transform: scale(1.04);
+}
+.glass-media.alt{
+  position: relative;
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.glass-media.alt img{
+  transition: transform .35s ease, opacity .25s ease;
+  will-change: transform, opacity;
+}
+/* 클릭 시 커지는 느낌 */
+.glass-media.alt.is-zooming img{
+  transform: scale(1.08);
+}
+/* 포커스/호버 강조 */
+.glass-media.alt:hover{
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+.glass-media.alt:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(125,211,252,0.35);
+}
+.glass-media.alt:focus-visible img{
+  transform: scale(1.04);
+}
+
+/* ===== Responsive for Glass Media ===== */
+@media (max-width: 720px){
+  .glass-media, .glass-media.alt{
+    border-radius: 12px;
+  }
+}
+
+/* =========================
+   End of css/common.css
+   ========================= */
+
+  
