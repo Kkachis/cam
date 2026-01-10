@@ -17,6 +17,8 @@
   --accent-2: #a78bfa;   /* violet */
   --good: #34d399;
   --warn: #fbbf24;
+   --gold-1: #8f6b2a;   /* 딥 브론즈 */
+  --gold-2: #c9a24f;   /* 다크 골드 */
 
   --shadow: 0 10px 30px rgba(0,0,0,0.35);
   --shadow-2: 0 16px 50px rgba(0,0,0,0.45);
@@ -232,6 +234,54 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .btn-ghost:hover{
   background: color-mix(in oklab, var(--panel) 60%, transparent);
 }
+
+.btn-gold{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.10),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      var(--gold-2),
+      var(--gold-1)
+    );
+
+  border: 1px solid color-mix(in oklab, var(--gold-2) 55%, var(--line));
+  color: #f5f5f5; /* 순수 white 대신 약간 누른 화이트 */
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 8px 24px rgba(0,0,0,0.35);
+}
+
+
+.btn-gold:hover{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.22), transparent 42%),
+    linear-gradient(135deg,
+      color-mix(in oklab, var(--gold-2) 100%, transparent),
+      color-mix(in oklab, var(--gold-1) 100%, transparent)
+    );
+
+  border-color: color-mix(in oklab, var(--gold-2) 70%, var(--line));
+  filter: brightness(1.06);
+}
+
+.btn-gold:active{
+  transform: translateY(0) scale(0.98);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
+  filter: brightness(0.98);
+}
+
+.btn-gold:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px color-mix(in oklab, var(--gold-2) 30%, transparent),
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
 
 .btn .icon{ font-size: 14px; opacity: .9; }
 .btn-text{ font-size: 13px; }
@@ -962,43 +1012,378 @@ code{
   outline: none;
   box-shadow: 0 0 0 3px rgba(125,211,252,0.35);
 }
-.glass-media:focus-visible img{
-  transform: scale(1.04);
-}
-.glass-media.alt{
-  position: relative;
-  cursor: pointer;
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-.glass-media.alt img{
-  transition: transform .35s ease, opacity .25s ease;
-  will-change: transform, opacity;
-}
-/* 클릭 시 커지는 느낌 */
-.glass-media.alt.is-zooming img{
-  transform: scale(1.08);
-}
-/* 포커스/호버 강조 */
-.glass-media.alt:hover{
-  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-}
-.glass-media.alt:focus-visible{
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(125,211,252,0.35);
-}
-.glass-media.alt:focus-visible img{
-  transform: scale(1.04);
+/* ==================================================
+   FIX: Mobile nav menu hidden (append-only)
+   - Force show center nav links on mobile
+   ================================================== */
+
+.site-header{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 3000 !important;
 }
 
-/* ===== Responsive for Glass Media ===== */
-@media (max-width: 720px){
-  .glass-media, .glass-media.alt{
-    border-radius: 12px;
+/* "가운데 메뉴"에 쓰일 법한 클래스들 전부 복구 (프로젝트마다 이름이 달라서 보험) */
+@media (max-width: 820px){
+  .site-nav,
+  .nav,
+  .nav-inner{
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* 네비 링크 묶음(대부분 이게 숨겨져 있음) */
+  .nav-links,
+  .nav-center,
+  .nav-items,
+  .nav-menu{
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;      /* ✅ 모바일에서 넘치면 가로 스크롤 */
+    -webkit-overflow-scrolling: touch;
+    max-width: 100% !important;
+  }
+
+  /* 가로 스크롤인데 스크롤바는 얇게/숨김(브라우저마다 다름) */
+  .nav-links::-webkit-scrollbar,
+  .nav-center::-webkit-scrollbar,
+  .nav-items::-webkit-scrollbar,
+  .nav-menu::-webkit-scrollbar{
+    height: 6px;
+  }
+
+  /* 로고/오른쪽 버튼 때문에 링크가 눌려있으면 줄이기 */
+  .nav-links a,
+  .nav-center a,
+  .nav-items a,
+  .nav-menu a{
+    white-space: nowrap !important;
   }
 }
-
-/* =========================
-   End of css/common.css
+/* ==================================================
+   END: Mobile nav menu hidden (append-only)
+   ================================================== */
+   /* =========================
+   Mobile Header Fix
    ========================= */
+@media (max-width: 768px){
+  .header-inner{
+    gap: 10px;
+  }
 
-  
+  .nav{
+    flex: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .nav::-webkit-scrollbar{
+    display: none;
+  }
+
+  .nav-link{
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .header-actions{
+    display: none; /* 모바일에선 깔끔하게 제거 */
+  }
+}
+html{
+  --bg: #0a101c;
+  --panel: rgba(255,255,255,0.06);
+  --panel-2: rgba(255,255,255,0.09);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.62);
+  --line: rgba(255,255,255,0.12);
+  --accent: #7dd5fc;
+  --accent-2: #a78bfa;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-2: 0 16px 50px rgba(0,0,0,0.45);
+  --radius: 18px;
+  --max: 1200px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --mono: 'Fira Code', 'Courier New', Courier, monospace;
+}
+/* =========================
+   Student Gallery - Mobile Fix
+   ========================= */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (max-width: 768px){
+  .gallery{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px){
+  .g-item img{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+/* 모바일에서 카드 확장 내용이 잘리지 않게 */
+@media (max-width: 720px){
+  .expand-card.is-open .card-expand{
+    max-height: 2000px; /* 900px -> 크게 */
+  }
+}
+/* =========================
+   Mobile Theme Button Icon-only
+   ========================= */
+@media (max-width: 720px){
+  /* 테마 버튼 텍스트 제거 */
+  .header-actions [data-action="toggle-theme"] .btn-text{
+    display: none;
+  }
+
+  /* 테마 버튼을 1:1 아이콘 버튼으로 */
+  .header-actions [data-action="toggle-theme"]{
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 아이콘 크기 조절 */
+  .header-actions [data-action="toggle-theme"] .icon{
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+/* =========================
+   Mobile: Theme button icon-only (square)
+   ========================= */
+@media (max-width: 720px){
+  /* 혹시 어딘가에서 header-actions를 숨겼다면 강제로 다시 보이게 */
+  .header-actions{ display:flex !important; gap: 10px; align-items:center; }
+
+  /* 모바일에서는 테마 버튼만 남기고 나머지 액션 버튼 숨기기 */
+  .header-actions > :not([data-action="toggle-theme"]){
+    display: none !important;
+  }
+
+  /* 테마 버튼: 1:1 정사각형 */
+  .header-actions [data-action="toggle-theme"]{
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 12px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  /* “Theme” 텍스트 제거 */
+  .header-actions [data-action="toggle-theme"] .btn-text{
+    display: none !important;
+  }
+
+  /* 아이콘 크기 */
+  .header-actions [data-action="toggle-theme"] .icon{
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+/* =========================
+   Mobile: nav text wrap (학교\n소개 형태)
+   ========================= */
+@media (max-width: 720px){
+  .nav{
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .nav-link{
+    /* 줄바꿈 허용 + 가운데 정렬 */
+    white-space: normal;
+    text-align: center;
+    line-height: 1.1;
+
+    /* 폭을 좁혀서 공백에서 자동 줄바꿈 유도 */
+    width: 70px;
+    padding: 10px 8px;
+  }
+
+  /* 한글 단어가 이상하게 쪼개지지 않게 */
+  .nav-link{
+    word-break: keep-all;
+  }
+}
+/* =========================
+   Mobile Footer Fix
+   ========================= */
+@media (max-width: 720px){
+  .site-footer{
+    padding: 24px 0;
+  }
+
+  .footer-inner{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-inner > div:first-child{
+    max-width: 90%;
+  }
+
+  .footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 14px;
+  }
+
+  .footer-links a{
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+/* =========================
+   Footer Logo Slot
+   ========================= */
+.footer-logo{
+  width: 96px;
+  height: 96px;
+  margin-bottom: 8px;
+
+  display: grid;
+  place-items: center;
+}
+
+.footer-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+}
+.footer-logo.alt{
+  width: 96px;
+  height: 96px;
+  margin-bottom: 8px;
+
+  display: grid;
+  place-items: center;
+}
+.footer-logo.alt img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+}
+/* =========================
+   Common Styles
+   ========================= */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+/* =========================
+   Modal (Quick)
+   ========================= */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 999;
+}
+
+.modal.is-open{ display: block; }
+
+.modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+
+.modal-panel{
+  position: relative;
+  width: min(560px, calc(100% - 28px));
+  margin: 10vh auto 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in oklab, var(--panel-2) 70%, transparent);
+}
+
+.modal-title{
+  font-size: 16px;
+  margin: 0;
+}
+
+.modal-body{
+  padding: 14px;
+}
+
+.quick-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 720px){
+  .modal-panel{ margin-top: 12vh; }
+  .quick-grid{ grid-template-columns: 1fr; }
+}
+/* =========================
+   Mobile: Quick Search icon button
+   ========================= */
+@media (max-width: 720px){
+
+  /* 빠른탐색 버튼: 아이콘만 남기기 */
+  .header-actions [data-action="open-quick"]{
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 12px;
+    font-size: 0; /* 텍스트 숨김 */
+  }
+
+  /* 돋보기 아이콘 생성 */
+  .header-actions [data-action="open-quick"]::before{
+    content: "🔎";
+    font-size: 18px;
+    line-height: 1;
+  }
+}
