@@ -1589,5 +1589,27 @@ html{
     font-size: 10px;
   }
 }
+/* =========================
+   OVERRIDE: expanded character image 1:1
+   ========================= */
+
+/* 카드 열렸을 때 메인 이미지도 1:1로 */
+.expand-card.is-open .thumb{
+  aspect-ratio: 1 / 1;
+  width: 430px;              /* 메인 이미지 크기 (원하면 160~220 조절) */
+  margin: 10px auto 12px;    /* 중앙 정렬 */
+  border-radius: 22px;
+
+  /* 헤더형 스타일 되돌리기 */
+  border: 1px solid var(--line);
+}
+
+/* 이미지 꽉 채우기 */
+.expand-card.is-open .thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+}
 
 
