@@ -10,23 +10,23 @@
   const students = [
     {
       id: "st-001",
-      name: "한유진",
+      name: "김가빈",
       age: 20,
-      major: "컴퓨터공학과",
-      tags: ["AI챗", "캠퍼스 라이프", "프로젝트"],
-      personality: "차분하지만 승부욕이 있고, 팀 프로젝트에서 추진력이 강하다.",
-      headline: "컴퓨터와 게임을 좋아하는 신입생",
-      thumb: "./assets/images/students/yuji_01.jpg",
+      major: "경영학과",
+      tags: ["INFJ", "신입생", "모태솔로"],
+      personality: "내성적이고 조용한 편이지만, 친해지면 다정하고 유머러스함.",
+      headline: "내성적이고 다정한 유저의 소꿉친구",
+      thumb: "./assets/bg (40).png",
       photos: [
-        "./assets/images/students/yuji_01.jpg",
-        "./assets/images/students/yuji_02.jpg",
-        "./assets/images/students/yuji_03.jpg",
-        "./assets/images/students/yuji_04.jpg"
+        "./assets/bg (6).png",
+        "./assets/bg (7).png",
+        "./assets/bg (25).png",
+        "./assets/bg (39).png"
       ],
       profile: {
         "학년": "1학년",
-        "관심 분야": "대화 UX / 캐릭터 인터랙션",
-        "동아리": "미디어콘텐츠 연구회",
+        "관심 분야": "연애 / 성 지식",
+        "동아리": "문학 동아리",
         "좋아하는 공간": "도서관 라운지"
       }
     },
@@ -34,66 +34,176 @@
       id: "st-002",
       name: "정유진",
       age: 21,
-      major: "경영학과",
-      tags: ["기획", "브랜딩", "스토리"],
-      personality: "말보다 결과로 보여주는 타입. 전략을 세우면 끝까지 밀고 간다.",
-      headline: "서비스 기획과 사용자 흐름 담당.",
-      thumb: "./assets/images/students/dohyun_01.jpg",
+      major: "국어국문학과",
+      tags: ["INFP", "문학소녀", "망상가"],
+      personality: "상상력이 풍부하고 감수성이 예민하다. 혼자 있는 시간을 좋아함.",
+      headline: "상상력이 풍부한 문학 소녀",
+      thumb: "./assets/gg (40).png",
       photos: [
-        "./assets/images/students/dohyun_01.jpg",
-        "./assets/images/students/dohyun_02.jpg",
-        "./assets/images/students/dohyun_03.jpg",
-        "./assets/images/students/dohyun_04.jpg"
+        "./assets/gg (6).png",
+        "./assets/gg (7).png",
+        "./assets/gg (25).png",
+        "./assets/gg (39).png"
       ],
       profile: {
         "학년": "2학년",
-        "관심 분야": "서비스 기획 / 사용자 흐름",
-        "동아리": "창업학회",
-        "좋아하는 공간": "학생회관 2층 라운지"
+        "관심 분야": "현대 문학 / 시 창작",
+        "동아리": "문예 창작 동아리",
+        "좋아하는 공간": "도서관 2층 창가"
       }
     },
     {
       id: "st-003",
       name: "박서연",
-      age: 20,
-      major: "심리학과",
-      tags: ["감정선", "대화", "관계"],
-      personality: "관찰력이 뛰어나고 공감이 빠르다. ‘말의 온도’에 예민하다.",
-      headline: "사람을 좋아하고 심리를 연구하는 학생",
-      thumb: "./assets/images/students/seoyeon_01.jpg",
+      age: 23,
+      major: "법학과",
+      tags: ["INTJ", "논리적", "츤데레"],
+      personality: "이성적이고 분석적인 사고를 좋아하며, 감정보다는 논리를 중시함.",
+      headline: "이성적이고 논리적인 법학도",
+      thumb: "./assets/yg (40).png",
       photos: [
-        "./assets/images/students/seoyeon_01.jpg",
-        "./assets/images/students/seoyeon_02.jpg",
-        "./assets/images/students/seoyeon_03.jpg",
-        "./assets/images/students/seoyeon_04.jpg"
+        "./assets/yg (6).png",
+        "./assets/yg (7).png",
+        "./assets/yg (25).png",
+        "./assets/yg (39).png"
       ],
       profile: {
-        "학년": "1학년",
-        "관심 분야": "대화 심리 / 캐릭터 감정 모델",
-        "동아리": "상담 스터디",
-        "좋아하는 공간": "잔디광장"
+        "학년": "4학년",
+        "관심 분야": "국제법 / 인권",
+        "동아리": "토론 동아리",
+        "좋아하는 공간": "중앙 광장 벤치"
       }
     },
     {
       id: "st-004",
-      name: "최가빈",
+      name: "정예진",
       age: 22,
       major: "산업디자인학과",
-      tags: ["UI", "비주얼", "브랜드"],
-      personality: "깔끔한 기준이 있고, 흐트러진 디테일을 그냥 못 넘긴다.",
-      headline: "디자인 감각이 뛰어난 3학년 학생",
-      thumb: "./assets/images/students/minjae_01.jpg",
+      tags: ["ESTJ", "깔끔쟁이", "메스가키"],
+      personality: "체계적이고 장난기 넘치는 성격으로, 계획을 세우고 실행하는 것을 좋아함.",
+      headline: "체계적이고 깔끔한 디자인 전공생",
+      thumb: "./assets/pg (40).png",
       photos: [
-        "./assets/images/students/minjae_01.jpg",
-        "./assets/images/students/minjae_02.jpg",
-        "./assets/images/students/minjae_03.jpg",
-        "./assets/images/students/minjae_04.jpg"
+        "./assets/pg (6).png",
+        "./assets/pg (7).png",
+        "./assets/pg (25).png",
+        "./assets/pg (39).png"
       ],
       profile: {
         "학년": "3학년",
-        "관심 분야": "UX/UI / 인터랙션",
-        "동아리": "디자인 스튜디오",
-        "좋아하는 공간": "메이커스페이스"
+        "관심 분야": "제품 디자인 / UX/UI",
+        "동아리": "디자인 연구회",
+        "좋아하는 공간": "디자인 스튜디오"
+      }
+    },
+    {
+      id: "st-005",
+      name: "이진아",
+      age: 21,
+      major: "컴퓨터공학과",
+      tags: ["ISTP", "로봇", "게임매니아"],
+      personality: "논리적이고 분석적인 성격으로, 문제 해결을 즐기며 기술에 관심이 많음.",
+      headline: "논리적이고 분석적인 컴퓨터공학과 학생",
+      thumb: "./assets/wg (40).png",
+      photos: [
+        "./assets/wg (6).png",
+        "./assets/wg (7).png",
+        "./assets/wg (25).png",
+        "./assets/wg (39).png"
+      ],
+      profile: {
+        "학년": "2학년",
+        "관심 분야": "인공지능 / 게임 개발",
+        "동아리": "게임 개발 동아리",
+        "좋아하는 공간": "컴퓨터 실습실"
+      }
+    },
+    {
+      id: "st-006",
+      name: "박지아",
+      age: 22,
+      major: "신소재 공학과",
+      tags: ["ENFP", "활발함", "리트리버 인간"],
+      personality: "외향적이고 창의적인 성격으로, 새로운 아이디어를 탐구하고 사람들과 어울리는 것을 좋아함.",
+      headline: "외향적이고 창의적인 신소재 공학과 학생",
+      thumb: "./assets/vg (40).png",
+      photos: [
+        "./assets/vg (6).png",
+        "./assets/vg (7).png",
+        "./assets/vg (25).png",
+        "./assets/vg (39).png"
+      ],
+      profile: {
+        "학년": "2학년",
+        "관심 분야": "나노기술 / 재료 과학",
+        "동아리": "로봇 공학 동아리",
+        "좋아하는 공간": "학생회관 카페"
+      }
+    },
+    {
+      id: "st-007",
+      name: "권수지",
+      age: 20,
+      major: "의예과",
+      tags: ["ESTP", "츤데레", "장난기 있음"],
+      personality: "외향적이고 활동적인 성격으로, 사람들과 어울리며 새로운 경험을 즐기는 타입.",
+      headline: "외향적이고 활동적인 의예과 학생",
+      thumb: "./assets/sg (40).png",
+      photos: [
+        "./assets/sg (6).png",
+        "./assets/sg (7).png",
+        "./assets/sg (25).png",
+        "./assets/sg (39).png"
+      ],
+      profile: {
+        "학년": "1학년",
+        "관심 분야": "의학 연구 / 봉사 활동",
+        "동아리": "보드게임 동아리",
+        "좋아하는 공간": "캠퍼스 카페"
+      }
+    },
+    {
+      id: "st-008",
+      name: "신다은",
+      age: 22,
+      major: "스포츠 과학과",
+      tags: ["ENTP", "독설가", "운동광"],
+      personality: "외향적이고 활동적인 성격으로, 운동을 좋아하며 도전을 즐기는 타입.",
+      headline: "외향적이고 츤데레인 스포츠 과학과 학생",
+      thumb: "./assets/dg (40).png",
+      photos: [
+        "./assets/dg (6).png",
+        "./assets/dg (7).png",
+        "./assets/dg (25).png",
+        "./assets/dg (39).png"
+      ],
+      profile: {
+        "학년": "3학년",
+        "관심 분야": "운동 생리학 / 트레이닝",
+        "동아리": "미식축구 동아리",
+        "좋아하는 공간": "운동장"
+      }
+    },
+    {
+      id: "st-009",
+      name: "박슬아",
+      age: 20,
+      major: "실용 음악과",
+      tags: ["ENTJ", "집착광", "밴드부"],
+      personality: "외향적이고 리더십이 강한 성격으로, 목표나 한사람을 향해 끈질기게 노력하는 타입.",
+      headline: "외향적이고 집착이 강한 실용 음악과 학생",
+      thumb: "./assets/jg (40).png",
+      photos: [
+        "./assets/jg (6).png",
+        "./assets/jg (7).png",
+        "./assets/jg (25).png",
+        "./assets/jg (39).png"
+      ],
+      profile: {
+        "학년": "1학년",
+        "관심 분야": "음악 제작 / 일렉 기타",
+        "동아리": "밴드 동아리",
+        "좋아하는 공간": "음악 연습실"
       }
     }
   ];
