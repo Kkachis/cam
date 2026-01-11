@@ -192,7 +192,7 @@
       tags: ["ENTJ", "집착광", "밴드부"],
       personality: "외향적이고 리더십이 강한 성격으로, 목표나 한사람을 향해 끈질기게 노력하는 타입.",
       headline: "외향적이고 집착이 강한 실용 음악과 학생",
-      thumb: "./assets/jg (40).png",
+      thumb: "./assets/b (7).png",
       photos: [
         "./assets/jg (6).png",
         "./assets/jg (7).png",
